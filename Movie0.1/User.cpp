@@ -34,10 +34,12 @@ User::~User()
 
 bool User::login(string email,string pwd,int& cookie)
 {
+	if (email == "" ||pwd == "")return false;
 	cookie = -1;
 	vector<UserModel> vec;
 	if (queryUserByEmail_pwd(email, pwd, vec)) {
 		cookie = vec[0].ID;
+		return true;
 	}
 	else {
 		return false;
@@ -46,6 +48,7 @@ bool User::login(string email,string pwd,int& cookie)
 
 bool User::regist(string email,string name, string pwd, int& cookie)
 {
+	if (email == "" || name == "" || pwd == "")return false;
 	vector<UserModel> vec;
 	if (queryUserByEmail_pwd(email, pwd, vec)) return false;
 	UserModel user = initDefaultUser(name, pwd, email);
@@ -54,6 +57,63 @@ bool User::regist(string email,string name, string pwd, int& cookie)
 		return false;
 	}return false;
 }
+
+bool User::changePwd(int id, string pwd)
+{
+	UserModel* p;
+	if (this->queryUserByID(id, p)) {
+		if (p->pwd == pwd) {
+			cout << "密码不能和上次相同";
+			return false;
+		}
+		p->pwd = pwd;
+		return true;
+	}
+	return false;
+}
+
+bool User::changeJob(int id, int job)
+{
+	UserModel* p;
+	if (this->queryUserByID(id, p)) {
+		p->job = job;
+		return true;
+	}
+	return false;
+}
+
+bool User::changeInterset(int id, int interest)
+{
+	UserModel* p;
+	if (this->queryUserByID(id, p)) {
+		p->intreset = interest;
+		return true;
+	}
+	return false;
+}
+
+
+bool User::changeAgeGroup(int id, int group)
+{
+	UserModel* p;
+	if (this->queryUserByID(id, p)) {
+		p->ageGroup = group;
+		return true;
+	}
+	return false;
+}
+
+
+bool User::changeName(int id, string name)
+{
+	UserModel* p;
+	if (this->queryUserByID(id, p)) {
+		p->name = name;
+		return true;
+	}
+	return false;
+}
+
 
 bool User::warning(int id)
 {

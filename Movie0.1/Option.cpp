@@ -2,15 +2,24 @@
 #include "Option.h"
 
 
+
+
 Option::Option()
 {
+	
 	ifstream fs("comments.txt", ios::in);
+	if (fs.peek() == EOF)
+	{
+		cout << "ÎÄ¼þÒÑ¿Õ\n"<<endl;
+		return;
+	}
 	while (!fs.eof())
 	{
 		CommentModel com;
 		fs >> com.ID >> com.status >> com.filmID
 			>> com.UserID >> com.scores >> com.userAgeGroup
 			>> com.userIntreset >> com.userJob >> com.content;
+		
 		_insertCom(com);
 	}
 	fs.close();
@@ -59,6 +68,7 @@ bool Option::_insertCom(CommentModel &com)
 	if (com.content == "") return false;
 	com.ID = commentNumber++;
 	commentList.push_back(com);
+	return true;
 }
 
 bool Option::queryComByID(int cid, CommentModel *&p)

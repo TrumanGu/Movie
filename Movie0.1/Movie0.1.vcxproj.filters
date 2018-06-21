@@ -30,7 +30,10 @@
     <ClInclude Include="Option.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Recommend.h">
+    <ClInclude Include="Movie.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,7 +53,10 @@
     <ClCompile Include="Option.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Recommend.cpp">
+    <ClCompile Include="Movie.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

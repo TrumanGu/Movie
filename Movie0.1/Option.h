@@ -19,7 +19,7 @@ struct CommentModel
 class Option
 {
 public:
-	friend class Recommend;
+	friend class Movie;
 	Option();
 	~Option();
 
@@ -57,7 +57,7 @@ public:
 	bool queryJobRank(int jon, vector<FilmModel>&);
 	bool queryAgeGroupRank(int ageGroup, vector<FilmModel>&);
 	*/
-
+	vector<CommentModel>& getCommentList() { return this->commentList; }
 
 private:
 	vector<CommentModel> commentList;

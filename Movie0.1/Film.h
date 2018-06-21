@@ -25,7 +25,7 @@ class Film
 public:
 	Film();
 	~Film();
-	friend class Recommend;
+	friend class Movie;
 	
 		//=================================用户权限==================================
 	//根据片名查影片
@@ -56,7 +56,10 @@ public:
 	//返回一个 id=-1的零时film对象
 	FilmModel initDefaultFilm(string, string, string, string, int, int, int);
 
+	int getfilmNumber() { return this->filmNumber; }
 
+
+	vector<FilmModel>& getFilmList() { return this->filmList;}
 
 private:
 	int filmNumber = 0;

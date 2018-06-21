@@ -1,10 +1,2 @@
-﻿  stdafx.cpp
-  Film.cpp
-  Movie0.1.cpp
-  Option.cpp
-  Recommend.cpp
-  User.cpp
-  正在生成代码...
-e:\新建文件夹\c++作业\期末作业\movie0.1\movie0.1\user.cpp(45): warning C4715: “User::login”: 不是所有的控件路径都返回值
-e:\新建文件夹\c++作业\期末作业\movie0.1\movie0.1\option.cpp(62): warning C4715: “Option::_insertCom”: 不是所有的控件路径都返回值
+﻿  Interface.cpp
   Movie0.1.vcxproj -> E:\新建文件夹\C++作业\期末作业\Movie0.1\Debug\Movie0.1.exe

@@ -17,14 +17,15 @@ struct UserModel
 class User
 {
 public:
-	friend class Recommend;
+	friend class Movie;
 	//==========普通用户==============
 	bool login(string email, string pwd, int& cookie);
-
-
 	bool regist(string email, string name, string pwd, int& cookie);
-
-
+	bool changePwd(int id,string pwd);
+	bool changeJob(int id, int job);
+	bool changeInterset(int id, int interest);
+	bool changeAgeGroup(int id, int ag);
+	bool changeName(int id, string name);
 	//==========vip权限===============
 	//对不起还没有vip
 	
@@ -43,6 +44,8 @@ public:
 	//拿到数据初始化一个具有默认值的用户模型（可以用于注册）
 	UserModel initDefaultUser(string name,string pwd,string email);
 
+	int getuserNumber() { return this->userNumber; }
+	vector<UserModel>& getUserList() { return this->userList; }
 	User();
 	~User();
 private:

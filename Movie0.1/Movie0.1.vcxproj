@@ -148,17 +148,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Film.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="Movie.h" />
     <ClInclude Include="Option.h" />
-    <ClInclude Include="Recommend.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Film.cpp" />
+    <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="Movie.cpp" />
     <ClCompile Include="Movie0.1.cpp" />
     <ClCompile Include="Option.cpp" />
-    <ClCompile Include="Recommend.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
